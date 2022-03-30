@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 import gif
+from IPython.display import clear_output
 
 
 # Plot the Results projected into the x-y-plane
@@ -13,8 +14,8 @@ def plot(i):
     z_positions = positions[2, :]
     plt.figure(figsize=(10,10))
     plt.scatter(x_positions, y_positions, s=8)
-    plt.xlim((-5e14, 5e14))
-    plt.ylim((-5e14, 5e14))
+    plt.xlim((-2e6, 2e6))
+    plt.ylim((-2e6, 2e6))
     
 def radii():
     radiuses = np.zeros((n, T))
@@ -25,8 +26,11 @@ def radii():
     return radiuses
 
 frames = []
-for i in range(T):
-    frame = plot(i)
+T = 10000
+for i in range(int(T/100)):
+    frame = plot(i*100)
     frames.append(frame)
+    clear_output(wait=True)
+    print(f'progress: {round((i+1)*100/(T) * 100, 3)}%')
     
 gif.save(frames, 'Gifs/n_body_system.gif', duration=20, unit='s', between='startend')
