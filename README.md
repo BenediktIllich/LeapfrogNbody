@@ -22,9 +22,13 @@ filepath - specify the path for the output
 
 # plot_results.py
 post processing of the output files. Available output flags:
+
 plot_energies - plots the kinetic and potential enegies of a fraction of the timesteps (takes a long time)
+
 make_position_gif - creates a movie in .gif format that shows the evolution of the system
+
 make_density_gif - creates a gif of the mass density of the system against distance from the center for a fraction of the timesteps
+
 plot_the_density - plots the final density and overlays it with fiducial NFW density profiles
 
 # Generate_N_Body_Setup
