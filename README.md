@@ -3,13 +3,21 @@ gravitational n-body simulation using a leapfrog integrator
 
 # leapfrog.py
 core of the nbody algorithm. Integrates an initial setup over a number of timesteps with the possibility of having particles decay over time.
+
 n - number of particles
+
 T - number of Timesteps
+
 t - physical length of one timestep
+
 p - number of CPUs for the parallel computing of the accelerations
+
 softening - softening length for collisionless systems
+
 Gamma - decay crosssection for the particles (0 for stable particles)
+
 epsilon - fraction of mass that is converted to energy during the decay
+
 filepath - specify the path for the output
 
 # plot_results.py
